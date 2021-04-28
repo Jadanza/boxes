@@ -46,8 +46,12 @@
             
   <div class="section" id="burn-correction">
 <h1>Burn correction<a class="headerlink" href="#burn-correction" title="Permalink to this headline">¶</a></h1>
-<p>The burn correction – aka kerf – is integrated into the low level
-commands of Boxes.py. So for the most part developer do not need to
+<p>The burn correction – aka kerf – is done in two separate steps. The
+first mechanism is used during drawing. After rendering there is
+a post processing step that replaces the inverted arcs of the inner corners by
+Bezier loops that can be cut in a continous motion.</p>
+<p>The first mechanism is integrated into the low level
+commands of Boxes.py. So for the most part developers do not need to
 care about it. Nevertheless they need to understand how it works to
 catch the places the do need to care.</p>
 <p>Burn correction is done by increasing the radius of all outer
@@ -60,10 +64,10 @@ for small radii and sharp corners (radius zero) this results in a
 negative values. It turns out flipping over the arc for negative radii
 allows keeping the lengths of the straight lines unchanged. So this is
 what Boxes.py does:</p>
-<img alt="_images/burn.svg" src="_images/burn.svg" /><p>This results in the straight lines touching the piece. This leads to
-overcuts. They are not as nice as proper dog bones as might be used by
+<img alt="_images/burn.svg" src="_images/burn.svg" /><p>This results in the straight lines touching the piece. This would lead to
+overcuts that are not as nice as proper dog bones as might be used by
 a dedicated CAM software. But as Boxes.py is meant to be used for laser
-cutting this is deemed acceptable:</p>
+cutting this deemed acceptable for a long time:</p>
 <img alt="_images/overcuts.svg" src="_images/overcuts.svg" /><div class="section" id="programmer-s-perspective">
 <h2>Programmer’s perspective<a class="headerlink" href="#programmer-s-perspective" title="Permalink to this headline">¶</a></h2>
 <p>For this to work it is important that outside is drawn in a counter
@@ -86,6 +90,23 @@ of the hole one is about to cut. This can be done in <strong>x</strong> or <stro
 direction depending on whether the cut ist started vertical or
 horizontally.</p>
 </div>
+<div class="section" id="replacing-the-inverted-arcs">
+<h2>Replacing the inverted arcs<a class="headerlink" href="#replacing-the-inverted-arcs" title="Permalink to this headline">¶</a></h2>
+<p>The inverted arcs have several drawbacks. For one they remove more
+material than needed. This is not a big deal for laser cutters. But if
+the boxes are cut with a CNC milling machine that can be
+annoying. Another drawback is that the direction is reversed twice
+which requires the tool (typically the laser head) to come to a total stop.</p>
+<p>To solve this issue all paths are scanned for intersecting lines that
+are connected by an inverted arc. There the lines are shortened to the
+intersection point and the arc is replaced by a Bezier loop that is
+continues the lines and loops on the outside of the corner. That way
+the path still removes additional material to make sure the full
+inner corner is cleared out. The current implementation uses the
+former end points of the lines as control points. This gives
+reasonable results but errs on the save side. The amount of material
+removed can probably be further optimized.</p>
+<img alt="_images/burn2.svg" src="_images/burn2.svg" /></div>
 </div>
 
 
@@ -102,6 +123,7 @@ horizontally.</p>
   <ul>
 <li><a class="reference internal" href="#">Burn correction</a><ul>
 <li><a class="reference internal" href="#programmer-s-perspective">Programmer’s perspective</a></li>
+<li><a class="reference internal" href="#replacing-the-inverted-arcs">Replacing the inverted arcs</a></li>
 </ul>
 </li>
 </ul>
