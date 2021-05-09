@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Burn correction &#8212; boxes.py 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -44,7 +45,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="burn-correction">
+  <section id="burn-correction">
 <h1>Burn correction<a class="headerlink" href="#burn-correction" title="Permalink to this headline">¶</a></h1>
 <p>The burn correction – aka kerf – is done in two separate steps. The
 first mechanism is used during drawing. After rendering there is
@@ -68,7 +69,7 @@ what Boxes.py does:</p>
 overcuts that are not as nice as proper dog bones as might be used by
 a dedicated CAM software. But as Boxes.py is meant to be used for laser
 cutting this deemed acceptable for a long time:</p>
-<img alt="_images/overcuts.svg" src="_images/overcuts.svg" /><div class="section" id="programmer-s-perspective">
+<img alt="_images/overcuts.svg" src="_images/overcuts.svg" /><section id="programmer-s-perspective">
 <h2>Programmer’s perspective<a class="headerlink" href="#programmer-s-perspective" title="Permalink to this headline">¶</a></h2>
 <p>For this to work it is important that outside is drawn in a counter
 clock wise direction while holes are drawn in a clock wise direction.</p>
@@ -89,8 +90,8 @@ correct for the out-set at the outside of the part and again for in-set
 of the hole one is about to cut. This can be done in <strong>x</strong> or <strong>y</strong>
 direction depending on whether the cut ist started vertical or
 horizontally.</p>
-</div>
-<div class="section" id="replacing-the-inverted-arcs">
+</section>
+<section id="replacing-the-inverted-arcs">
 <h2>Replacing the inverted arcs<a class="headerlink" href="#replacing-the-inverted-arcs" title="Permalink to this headline">¶</a></h2>
 <p>The inverted arcs have several drawbacks. For one they remove more
 material than needed. This is not a big deal for laser cutters. But if
@@ -106,8 +107,8 @@ inner corner is cleared out. The current implementation uses the
 former end points of the lines as control points. This gives
 reasonable results but errs on the save side. The amount of material
 removed can probably be further optimized.</p>
-<img alt="_images/burn2.svg" src="_images/burn2.svg" /></div>
-</div>
+<img alt="_images/burn2.svg" src="_images/burn2.svg" /></section>
+</section>
 
 
             <div class="clearer"></div>
@@ -177,7 +178,7 @@ removed can probably be further optimized.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Florian Festi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.0.
     </div>
   </body>
 </html>

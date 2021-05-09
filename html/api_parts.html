@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Parts &#8212; boxes.py 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -44,10 +45,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="parts">
+  <section id="parts">
 <h1>Parts<a class="headerlink" href="#parts" title="Permalink to this headline">¶</a></h1>
 <p>There are a few parameter shared by many of those parts:</p>
-<div class="section" id="the-callback-parameter">
+<section id="the-callback-parameter">
 <h2>The callback parameter<a class="headerlink" href="#the-callback-parameter" title="Permalink to this headline">¶</a></h2>
 <p>The callback parameter can take on of the following forms:</p>
 <ul class="simple">
@@ -63,8 +64,8 @@ callback.</p>
 calling the one building block function you need (e.g. fingerHolesAt).</p>
 <p>For your own parts you can use this helper function:</p>
 <dl class="py method">
-<dt id="boxes.Boxes.cc">
-<code class="sig-prename descclassname"><span class="pre">Boxes.</span></code><code class="sig-name descname"><span class="pre">cc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/boxes.html#Boxes.cc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boxes.Boxes.cc" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="boxes.Boxes.cc">
+<span class="sig-prename descclassname"><span class="pre">Boxes.</span></span><span class="sig-name descname"><span class="pre">cc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/boxes.html#Boxes.cc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boxes.Boxes.cc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call callback from edge of a part</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -80,8 +81,8 @@ calling the one building block function you need (e.g. fingerHolesAt).</p>
 
 <p>For finding the right piece to the <em>callback</em> parameter this function is used:</p>
 <dl class="py method">
-<dt id="boxes.Boxes.getEntry">
-<code class="sig-prename descclassname"><span class="pre">Boxes.</span></code><code class="sig-name descname"><span class="pre">getEntry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/boxes.html#Boxes.getEntry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boxes.Boxes.getEntry" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="boxes.Boxes.getEntry">
+<span class="sig-prename descclassname"><span class="pre">Boxes.</span></span><span class="sig-name descname"><span class="pre">getEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/boxes.html#Boxes.getEntry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boxes.Boxes.getEntry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get entry from list or items itself</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -93,8 +94,8 @@ calling the one building block function you need (e.g. fingerHolesAt).</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="the-move-parameter">
+</section>
+<section id="the-move-parameter">
 <h2>The move parameter<a class="headerlink" href="#the-move-parameter" title="Permalink to this headline">¶</a></h2>
 <p>For placing the parts the <code class="docutils literal notranslate"><span class="pre">move</span></code> parameter can be used. It is string
 with space separated words - at most one of each of those options:</p>
@@ -109,8 +110,8 @@ multiple parts in the other and have returned with <code class="docutils literal
 <p>For implementing parts the following helper function can be used to
 implement a <code class="docutils literal notranslate"><span class="pre">move</span></code> parameter:</p>
 <dl class="py method">
-<dt id="boxes.Boxes.move">
-<code class="sig-prename descclassname"><span class="pre">Boxes.</span></code><code class="sig-name descname"><span class="pre">move</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">before</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/boxes.html#Boxes.move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boxes.Boxes.move" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="boxes.Boxes.move">
+<span class="sig-prename descclassname"><span class="pre">Boxes.</span></span><span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">before</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/boxes.html#Boxes.move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boxes.Boxes.move" title="Permalink to this definition">¶</a></dt>
 <dd><p>Intended to be used by parts
 where can be combinations of “up” or “down”, “left” or “right”, “only”,
 “mirror” and “rotated”
@@ -133,8 +134,8 @@ should be omited.</p>
 
 <p>It needs to be called before and after drawing the actual part with
 the proper <code class="docutils literal notranslate"><span class="pre">before</span></code> parameter set.</p>
-</div>
-<div class="section" id="the-edges-parameter">
+</section>
+<section id="the-edges-parameter">
 <h2>The edges parameter<a class="headerlink" href="#the-edges-parameter" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">edges</span></code> parameter needs to be an iterable of Edge instances to be
 used as edges of the part. Instead of instances it is possible to pass
@@ -152,13 +153,13 @@ default the following character are supported:</p>
 <code class="docutils literal notranslate"><span class="pre">.edges</span></code> dictionary.</p>
 <p>Same applies to the parameters of <code class="docutils literal notranslate"><span class="pre">.surroundingWall</span></code> although they
 denominate single edge (types) only.</p>
-</div>
-<div class="section" id="partsmatrix">
+</section>
+<section id="partsmatrix">
 <h2>PartsMatrix<a class="headerlink" href="#partsmatrix" title="Permalink to this headline">¶</a></h2>
 <p>To place many of the same part partMatrix can used:</p>
 <dl class="py method">
-<dt id="boxes.Boxes.partsMatrix">
-<code class="sig-prename descclassname"><span class="pre">Boxes.</span></code><code class="sig-name descname"><span class="pre">partsMatrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">move</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/boxes.html#Boxes.partsMatrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boxes.Boxes.partsMatrix" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="boxes.Boxes.partsMatrix">
+<span class="sig-prename descclassname"><span class="pre">Boxes.</span></span><span class="sig-name descname"><span class="pre">partsMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">move</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/boxes.html#Boxes.partsMatrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#boxes.Boxes.partsMatrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>place many of the same part</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -176,8 +177,8 @@ denominate single edge (types) only.</p>
 
 <p>It creates one big block of parts. The move param treat this block like on big
 part.</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -249,7 +250,7 @@ part.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Florian Festi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.0.
     </div>
   </body>
 </html>

@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Architecture &#8212; boxes.py 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -44,10 +45,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="architecture">
+  <section id="architecture">
 <h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h1>
 <p>Boxes.py it structured into several distinct tiers.</p>
-<div class="section" id="user-interfaces">
+<section id="user-interfaces">
 <h2>User Interfaces<a class="headerlink" href="#user-interfaces" title="Permalink to this headline">¶</a></h2>
 <p>User interfaces allow users to render the different generators. They
 handle the parameters of Generators and convert them to a readable
@@ -58,8 +59,8 @@ form. The user interfaces are located in <cite>scripts/</cite>. Currently there 
 <li><p>scripts/boxes2inx – generates Inkscape extensions</p></li>
 <li><p>scripts/boxes_example.ipynb – Jupyter notebook</p></li>
 </ul>
-</div>
-<div class="section" id="generators">
+</section>
+<section id="generators">
 <h2>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">¶</a></h2>
 <p>A (box) generator is an sub class of boxes.Boxes. It generates one
 drawing. The sub classes over load .__init__() to set their parameters
@@ -69,22 +70,22 @@ the web UI and the CLI tool by the name of their class. So whenever
 you copy either an existing generator or the sceleton in
 <code class="docutils literal notranslate"><span class="pre">boxes/generators/_template.py</span></code> you need to change the name of the
 main class first.</p>
-</div>
-<div class="section" id="parts">
+</section>
+<section id="parts">
 <h2>Parts<a class="headerlink" href="#parts" title="Permalink to this headline">¶</a></h2>
 <p>Parts are a single call that draws something according to a set of parameters.
 There is a number of standard parts. Their typical params are
 explained in the API docs.</p>
 <p>Only real requirement for a part it supporting the move parameter for
 placement.</p>
-<div class="section" id="part-callbacks">
+<section id="part-callbacks">
 <h3>Part Callbacks<a class="headerlink" href="#part-callbacks" title="Permalink to this headline">¶</a></h3>
 <p>Most parts support callbacks - either one in the middle for round
 parts or one for each edge. They allow placing holes or other features
 on the part.</p>
-</div>
-</div>
-<div class="section" id="navigation-and-turtle-graphics">
+</section>
+</section>
+<section id="navigation-and-turtle-graphics">
 <h2>Navigation and Turtle Graphics<a class="headerlink" href="#navigation-and-turtle-graphics" title="Permalink to this headline">¶</a></h2>
 <p>Many drawing commands in Boxes.py are Turtle Graphics commands. They
 start at the current position and in the current direction and move
@@ -93,8 +94,8 @@ never used and placement and movement is always relative to the
 current position.</p>
 <p>There are a few functions to move the origin to a convenient position
 or to return to a previously saved position.</p>
-</div>
-<div class="section" id="edges">
+</section>
+<section id="edges">
 <h2>Edges<a class="headerlink" href="#edges" title="Permalink to this headline">¶</a></h2>
 <p>Edges are turtle graphic commands. But they have been elevated to
 proper Classes to handle outsets. They can be passed as parameters to parts.
@@ -102,8 +103,8 @@ There is a set of standard edges found in <code class="docutils literal notransl
 associated with a single char which can be used instead of the
 Edge object itself at most places. This allows passing the edge
 description of a part as a string.</p>
-</div>
-<div class="section" id="turtle-graphics">
+</section>
+<section id="turtle-graphics">
 <h2>Turtle graphics<a class="headerlink" href="#turtle-graphics" title="Permalink to this headline">¶</a></h2>
 <p>There are a few turtle graphics commands that do the actual
 drawing. Corners with an positive angle (going counter clockwise)
@@ -111,22 +112,22 @@ close the part while negative angles (going clockwise) create protrusions.
 This is inversed for holes which need to be drawn clockwise.</p>
 <p>Getting this directions right is important to make the burn correction
 (aka kerf) work properly.</p>
-</div>
-<div class="section" id="simple-drawing-commands">
+</section>
+<section id="simple-drawing-commands">
 <h2>Simple drawing commands<a class="headerlink" href="#simple-drawing-commands" title="Permalink to this headline">¶</a></h2>
 <p>These also are simple drawing commands. Some of them get <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and
 <code class="docutils literal notranslate"><span class="pre">angle</span></code> parameters to draw somewhere specific. Some just draw right
 at the current coordinate origin. Often these commands create holes or
 hole patterns.</p>
-</div>
-<div class="section" id="back-end">
+</section>
+<section id="back-end">
 <h2>Back end<a class="headerlink" href="#back-end" title="Permalink to this headline">¶</a></h2>
 <p>Boxes.py used to use cairo as graphics library. It now uses its own -
 pure Python - back end. It is not fully encapsulated
 within the drawing methods of the Boxes class. Although this is the
 long term goal. Boxes.ctx is the context all drawing is made on.</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -205,7 +206,7 @@ long term goal. Boxes.ctx is the context all drawing is made on.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Florian Festi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.0.
     </div>
   </body>
 </html>

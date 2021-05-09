@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Installation &#8212; boxes.py 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -43,63 +44,63 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="installation">
+  <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>Boxes.py is a pure Python project that does support the regular setuptools
 method of shipping with <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code>. <code class="code docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">--help-commands</span></code> and
 <code class="code docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">CMD</span> <span class="pre">--help</span></code> provide the necessary documentation for building,
 installing or building binary formats.</p>
-<div class="section" id="requirements">
+<section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="affine">
+<section id="affine">
 <h3>Affine<a class="headerlink" href="#affine" title="Permalink to this headline">¶</a></h3>
 <p><code class="code docutils literal notranslate"><span class="pre">Affine</span></code> (package name may be <code class="code docutils literal notranslate"><span class="pre">python-affine</span></code> or
 <code class="code docutils literal notranslate"><span class="pre">python3-affine</span></code>) is used for vector calculation.</p>
-</div>
-<div class="section" id="markdown">
+</section>
+<section id="markdown">
 <h3>Markdown<a class="headerlink" href="#markdown" title="Permalink to this headline">¶</a></h3>
 <p><code class="code docutils literal notranslate"><span class="pre">Markdown</span></code> (package name may be <code class="code docutils literal notranslate"><span class="pre">python-markdown</span></code> or
 <code class="code docutils literal notranslate"><span class="pre">python3-markdown</span></code>) is used to format the description texts.</p>
-</div>
-<div class="section" id="lxml">
+</section>
+<section id="lxml">
 <h3>LXML<a class="headerlink" href="#lxml" title="Permalink to this headline">¶</a></h3>
 <p><code class="code docutils literal notranslate"><span class="pre">lxml</span></code> (package name may be <code class="code docutils literal notranslate"><span class="pre">python-lxml</span></code> or <code class="code docutils literal notranslate"><span class="pre">python3-lxml</span></code>)
 is needed for the Inkscape plugin.</p>
-</div>
-<div class="section" id="setuptools">
+</section>
+<section id="setuptools">
 <h3>setuptools<a class="headerlink" href="#setuptools" title="Permalink to this headline">¶</a></h3>
 <p>Setup.py uses the <code class="code docutils literal notranslate"><span class="pre">setuptools</span></code> library (package name may be
 <code class="code docutils literal notranslate"><span class="pre">python*-setuptools</span></code>). You only need it if you want to build the
 package.</p>
-</div>
-<div class="section" id="ps2edit">
+</section>
+<section id="ps2edit">
 <h3>ps2edit<a class="headerlink" href="#ps2edit" title="Permalink to this headline">¶</a></h3>
 <p>While not a hard requirement Boxes.py uses <code class="code docutils literal notranslate"><span class="pre">ps2edit</span></code> to offer formats
 that are not supported by Cairo: DXF, gcode, PLT. Currently the location
 Boxes.py looks for <code class="code docutils literal notranslate"><span class="pre">ps2edit</span></code> is hard coded to <code class="code docutils literal notranslate"><span class="pre">/usr/bin/pstoedit</span></code>
 in the <code class="code docutils literal notranslate"><span class="pre">boxes.formats.Formats</span></code> class.</p>
-</div>
-<div class="section" id="python">
+</section>
+<section id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>Boxes.py is implemented in Python 3. It used to work on Python 2.7,
 too. But with the Python 2 approaching end of life support has been dropped.</p>
-</div>
-<div class="section" id="sphinx">
+</section>
+<section id="sphinx">
 <h3>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
 <p>For building the documentation locally you need the <em>Sphinx</em> documentation
 generator (package name may be python-sphinx or python3-sphinx). It is
 not needed for anything else. Boxes.py can be run and changed just
 fine without.</p>
-</div>
-</div>
-<div class="section" id="running-from-working-dir">
+</section>
+</section>
+<section id="running-from-working-dir">
 <h2>Running from working dir<a class="headerlink" href="#running-from-working-dir" title="Permalink to this headline">¶</a></h2>
 <p>Due to lazy developer(s) Boxes.py can also run from the Git checkout.
 The scripts in <code class="code docutils literal notranslate"><span class="pre">scripts/</span></code> are all suppossed to just work right
 after <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>. The Inkscape needs a bit manual work to get
 running. See below.</p>
-</div>
-<div class="section" id="inkscape">
+</section>
+<section id="inkscape">
 <h2>Inkscape<a class="headerlink" href="#inkscape" title="Permalink to this headline">¶</a></h2>
 <p><strong>As binary</strong></p>
 <p>Boxes.py can be used as a set of Inkscape plugins. The package does
@@ -129,8 +130,8 @@ up the directories <em>“User extensions”</em> and <em>“Inkscape extensions
 the Inkscape preferences <em>Edit -&gt; Preferences… -&gt; System</em>.</p>
 <p>As an alternative you can create a symlink to the <code class="code docutils literal notranslate"><span class="pre">inkex/</span></code> directory
 within the desired inkscape extension directory.</p>
-</div>
-<div class="section" id="platform-specific-instructions">
+</section>
+<section id="platform-specific-instructions">
 <h2>Platform specific instructions<a class="headerlink" href="#platform-specific-instructions" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -146,8 +147,8 @@ within the desired inkscape extension directory.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -227,7 +228,7 @@ within the desired inkscape extension directory.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2016, Florian Festi.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.0.
     </div>
   </body>
 </html>
