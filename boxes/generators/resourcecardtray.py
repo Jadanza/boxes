@@ -70,13 +70,36 @@ class ResourceCardTray(Boxes):
         callback = None;
         self.moveTo(t, t)
         self.cc(callback, 0)
+        #self.edges["e"](t)      #Bottom Edge
         self.edges[edges[0:1]](y)      #Bottom Edge
         self.corner(90, 0)
         self.cc(callback, 1)
-        self.edges[edges[1:2]](h - r)  #Right Edge
-        self.corner(90, r)      #Top right radius
+        self.edges[edges[1:2]](h - r )        #Right Edge
+        self.corner(90, r)                #Top right radius
         self.cc(callback, 2)
-        self.edge(y - r)        #width across the top
+        self.edge(y - r )        #width across the top
+        self.corner(90, 0)
+        self.cc(callback, 3)
+        self.cc(callback, 4)
+        self.edges[edges[3:4]](h)  #Left Edge
+        self.corner(90)
+        self.move(y+2*t, h+t, move)
+
+    def CardDividerEnds(self, y, h, r, edges="feef", move=None):
+        t = self.thickness
+        if self.move(y+2*t, h+t, move, True):
+            return
+        callback = None;
+        self.moveTo(t, t)
+        self.cc(callback, 0)
+        self.edges["e"](t)      #Bottom Edge
+        self.edges[edges[0:1]](y)      #Bottom Edge
+        self.corner(90, 0)
+        self.cc(callback, 1)
+        self.edges[edges[1:2]](h - r )        #Right Edge
+        self.corner(90, r)                #Top right radius
+        self.cc(callback, 2)
+        self.edge(y - r + t)        #width across the top
         self.corner(90, 0)
         self.cc(callback, 3)
         self.cc(callback, 4)
@@ -90,13 +113,13 @@ class ResourceCardTray(Boxes):
         if self.move(y+2*t, y+t, move, True):
             return
         self.moveTo(t, t)
-        self.edges[edges[0:1]](x)       #Bottom Edge
+        self.edges[edges[0:1]](x+t)       #Bottom Edge
         self.corner(90, 0)
-        self.edges[edges[1:2]](y+t)     #Right Edge
+        self.edges[edges[1:2]](y)     #Right Edge
         self.corner(90)                 #Top right radius
-        self.edges[edges[2:3]](x)       #Top Edge
+        self.edges[edges[2:3]](x+t)       #Top Edge
         self.corner(90, 0)
-        self.edges[edges[3:4]](y+t)     #Left Edge
+        self.edges[edges[3:4]](y)     #Left Edge
         self.corner(90)
         xPos = self.card_width + (self.thickness/2)
         i = 1
@@ -147,8 +170,8 @@ class ResourceCardTray(Boxes):
             i += 1
 
         #Render Ends
-        self.CardDividers(y, h, r, "FeeF", "up")  #Generate the dividers between cards
-        self.CardDividers(y, h, r, "FeeF", "up")  #Generate the dividers between cards
+        self.CardDividerEnds(y, h+self.thickness , r, "FeeF", "up")  #Generate the dividers between cards
+        self.CardDividerEnds(y, h+self.thickness , r, "FeeF", "up")  #Generate the dividers between cards
 
         #REnder base and back
         self.CardTrayBase( x, y, "efff", None, "up")    #base plate
